@@ -1,34 +1,39 @@
 import React from "react";
 import {useState} from 'react'
-import Details from "./Details";
 import "../styles/style.css"
+import Details from "./Details";
 
 const Search = () => {
   const [searchInput, setSearchInput] = useState("");
-  const profile =[{Details}]
   const handleChange = (e) => {
-    e.preventDefault();
     setSearchInput(e.target.value);
-  };
-  
-  if  (searchInput.length > 0) {
-      profile.filter((person) => {
-      return person.match(searchInput);
-  });
   }
+  const filtered =!searchInput? Details:
+    Details.filter(item =>
+    item.firstName.toLowerCase().includes(searchInput.toLowerCase()))
   
   return (
     <div>
       <input type="text"
-       placeholder='Search by name'
+       placeholder='Search by first name'
         className='search' 
         onChange={handleChange}
-        onInput={e => setSearchInput(e.target.value)}
         value={searchInput}
       />
+      <>
+      {filtered.map(item => {
+        return(
+          <div className="details">
 
+          </div>
+        )
+      })}
+      
+      </>
+     
+    
     </div> 
 
   );
-  }
+      }
 export default Search

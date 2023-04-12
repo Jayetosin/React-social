@@ -1,4 +1,5 @@
 {
+  "homepage":"http://jayetosin.github.io/react-social",
   "name": "social-media",
   "version": "0.1.0",
   "private": true,
@@ -11,10 +12,7 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage":[
-    "https://github.com/Jayetosin",
-    "https://github.com/Jayetosin/React-social"
-  ],
+  
   "scripts": {
     "start": "react-scripts start",
     "predeploy" : "npm run build",
@@ -42,5 +40,7 @@
       "last 1 safari version"
     ]
   },
- 
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
+  }
 }
